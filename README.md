@@ -148,6 +148,6 @@ CDN形式で配布されます。
 | BIZUDPMincho-Regular | <http://localhost:3001/fonts/BIZUDPMincho-Regular.ttf> |
 | BIZUDPMincho-Bold | <http://localhost:3001/fonts/BIZUDPMincho-Bold.ttf> |
 
-## 出展
+## リファレンス
 
 - M1課題PDF: [JAVADA 第20回若年者ものづくり競技大会 ウェブデザイン 当日公表課題 モジュール1](https://www.javada.or.jp/jyakunen20/20/kadai/11/11_02_toujitsukouhyoukadaiM1_20250808_wsedomo1.pdf)
