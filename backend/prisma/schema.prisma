@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./database.sqlite"
+}
+
+
+model Category {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  @@map("categories")
+}
+
+model Post {
+  id           Int      @id @default(autoincrement())
+  title        String
+  content      String
+  category     String
+  author       String
+  likes        Int      @default(0)
+  commentCount Int      @default(0)
+  createdAt    DateTime @default(now())
+  imageUrl     String?
+
+  @@map("posts")
+}

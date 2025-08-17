@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>選手向け情報ガイド</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .contentBox {
+        padding: 10px 50px;
+      }
+
+      h1 {
+        padding: 0 50px;
+      }
+
+      h2 {
+        background: #026e81;
+        color: #ffffff;
+        padding: 5px;
+        font-size: 1.4em;
+        text-align: center;
+      }
+
+      .gridBox {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: stretch;
+      }
+      .gridChild {
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      @media screen and (max-width: 420px) {
+        .gridChild {
+          width: 100%;
+        }
+      }
+
+      h3 {
+        font-size: 1.1em;
+        font-weight: normal;
+        margin: 0;
+        padding: 3px 10px;
+        display: inline-block;
+        background: #0099dd;
+        color: #ffffff;
+        width: fit-content;
+      }
+      .content {
+        padding: 10px;
+        border: 2px solid #0099dd;
+        height: 100%;
+      }
+      .content li {
+        line-height: 1.5em;
+      }
+
+      dt {
+        font-weight: bold;
+      }
+
+      input[type="text"] {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <h1>選手番号「XX」</h1>
+      <div class="contentBox">
+        <h2>各種リンク</h2>
+        <div class="gridBox">
+          <div class="gridChild">
+            <h3>CDN</h3>
+            <div class="content">
+              <dl>
+                <div>
+                  <dt>Bootstrap(js)</dt>
+                  <dd>
+                    <input
+                      type="text"
+                      value="http://localhost:3001/cdn/bootstrap.bundle.min.js"
+                    />
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>Bootstrap(css)</dt>
+                  <dd>
+                    <input
+                      type="text"
+                      value="http://localhost:3001/cdn/bootstrap.min.css"
+                    />
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>Font Awesome(js)</dt>
+                  <dd>
+                    <input
+                      type="text"
+                      value="http://localhost:3001/cdn/fontawesome.min.js"
+                    />
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>Tailwind CSS(js)</dt>
+                  <dd>
+                    <input
+                      type="text"
+                      value="http://localhost:3001/cdn/tailwind.js"
+                    />
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>BIZUDPGothic Bold (font)</dt>
+                  <dd>
+                    <input
+                      type="text"
+                      value="http://localhost:3001/fonts/BIZUDPGothic-Bold.ttf"
+                    />
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>BIZUDPGothic Regular (font)</dt>
+                  <dd>
+                    <input
+                      type="text"
+                      value="http://localhost:3001/fonts/BIZUDPGothic-Regular.ttf"
+                    />
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>BIZUDPMincho Bold (font)</dt>
+                  <dd>
+                    <input
+                      type="text"
+                      value="http://localhost:3001/fonts/BIZUDPMincho-Bold.ttf"
+                    />
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>BIZUDPMincho Regular (font)</dt>
+                  <dd>
+                    <input
+                      type="text"
+                      value="http://localhost:3001/fonts/BIZUDPMincho-Regular.ttf"
+                    />
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>Noto Sans JP (font)</dt>
+                  <dd>
+                    <input
+                      type="text"
+                      value="http://localhost:3001/fonts/NotoSansJP-VariableFont_wght.ttf"
+                    />
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>Noto Serif JP (font)</dt>
+                  <dd>
+                    <input
+                      type="text"
+                      value="http://localhost:3001/fonts/NotoSerifJP-VariableFont_wght.ttf"
+                    />
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="gridChild">
+            <h3>ドキュメント</h3>
+            <div class="content">
+              <dl>
+                <div>
+                  <dt>API Docs</dt>
+                  <dd>
+                    <a href="http://localhost:5000">API Documentation</a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var inputs = document.querySelectorAll("input[type='text']");
+      inputs.forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.select();
+        });
+      });
+    </script>
+  </body>
+</html>

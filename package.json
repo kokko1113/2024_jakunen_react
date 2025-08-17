@@ -1,0 +1,9 @@
+{
+  "name": "jyakunen2025-webdesign-m1",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx concurrently \"npm run backend\" \"npm run docs\"",
+    "backend": "cd backend && npm run setup",
+    "docs": "cd docs && npm run setup"
+  }
+}

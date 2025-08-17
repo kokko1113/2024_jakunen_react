@@ -1,0 +1,89 @@
+FORMAT: 1A
+HOST: http://localhost:3001
+
+# Post & Category API ドキュメント
+
+## Data Structures
+
+### Post (object)
++ id: 1 (number, required) - Post ID
++ title: サンプルタイトル (string, required) - タイトル
++ content: サンプル内容 (string, required) - 内容
++ author: 投稿者名 (string, required) - 投稿者
++ category: カテゴリ名 (string, required) - カテゴリ
++ createdAt: `2025-08-06T10:00:00Z` (string, required) - 作成日時
++ updatedAt: `2025-08-06T10:00:00Z` (string, required) - 更新日時
+
+### PostInput (object)
++ title: 新しいタイトル (string, required)
++ content: 新しい内容 (string, required)
++ author: 投稿者名 (string, required)
++ category: カテゴリ名 (string, required)
+
+### Category (object)
++ id: 1 (number, required)
++ name: カテゴリ名 (string, required)
+
+
+
+### Error (object)
++ error: エラー内容 (string, required)
+
+
+### NotFoundError (object)
++ error: エンドポイントが見つかりません (string, required)
+
+
+### ServerError (object)
++ error: サーバー内部エラーが発生しました (string, required)
+
+## Group Post管理
+
+### Post一覧 [/api/posts]
+
+
+#### Post一覧を取得 [GET]
++ Response 200 (application/json)
+    + Attributes (array[Post])
++ Response 500 (application/json)
+    + Attributes (ServerError)
+
+
+#### 新しいPostを作成 [POST]
++ Request (application/json)
+    + Attributes (PostInput)
++ Response 201 (application/json)
+    + Attributes (Post)
++ Response 400 (application/json)
+    + Attributes (Error)
+        + error: タイトルは必須です、内容は必須です、投稿者名は必須です、カテゴリは必須です
++ Response 500 (application/json)
+    + Attributes (ServerError)
+
+### 個別のPost取得 [/api/posts/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
+
+#### 個別のPostを取得 [GET]
++ Response 200 (application/json)
+    + Attributes (Post)
++ Response 400 (application/json)
+    + Attributes (Error)
+        + error: データの取得に失敗しました
++ Response 404 (application/json)
+    + Attributes (NotFoundError)
++ Response 500 (application/json)
+    + Attributes (ServerError)
+
+## Group Category管理
+
+### Category一覧 [/api/categories]
+
+
+#### Category一覧を取得 [GET]
++ Response 200 (application/json)
+    + Attributes (array[Category])
++ Response 500 (application/json)
+    + Attributes (ServerError)
