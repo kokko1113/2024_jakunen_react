@@ -85,7 +85,42 @@ const categories = categorySchema.array().parse([
 	{ id: 3, name: "観光" },
 ]);
 
+const comments = [
+	{
+		id: 1,
+		postId: 1,
+		author: "地元民",
+		content: "今年も楽しみです！毎年参加しています。",
+		createdAt: new Date("2025-01-15"),
+	},
+	{
+		id: 2,
+		postId: 1,
+		author: "観光客",
+		content: "初めて参加予定です。おすすめの観覧スポットはありますか？",
+		createdAt: new Date("2025-01-15"),
+	},
+	// Post 2 (commentCount: 1)
+	{
+		id: 3,
+		postId: 2,
+		author: "食通",
+		content: "早速行ってきました。麺のコシといりこだしの香りが最高でした！",
+		createdAt: new Date("2025-01-14"),
+	},
+	// Post 3 (commentCount: 1)
+	{
+		id: 4,
+		postId: 3,
+		author: "写真愛好家",
+		content: "今週末に行く予定です。朝の柔らかい光で桜を撮るのが楽しみ。",
+		createdAt: new Date("2025-01-13"),
+	},
+];
+
 async function main() {
+	// 依存関係: Comment -> Post -> Category の順で削除
+	await prisma.comment.deleteMany();
 	await prisma.post.deleteMany();
 	await prisma.category.deleteMany();
 
@@ -98,6 +133,11 @@ async function main() {
 		await prisma.post.create({ data: post });
 	}
 	console.log(`✅ ${posts.length}件の投稿データを挿入しました`);
+
+	for (const comment of comments) {
+		await prisma.comment.create({ data: comment });
+	}
+	console.log(`✅ ${comments.length}件のコメントデータを挿入しました`);
 }
 
 main()
