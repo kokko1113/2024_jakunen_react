@@ -40,3 +40,7 @@ coverage/
 # OS
 .DS_Store
 Thumbs.db
+
+# Database
+backend/prisma/*.(db|sqlite)
+backend/prisma/*.db-journal
