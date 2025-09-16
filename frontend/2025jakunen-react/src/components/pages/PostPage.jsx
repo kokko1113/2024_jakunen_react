@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { usePosts } from "../../hooks/UsePosts"
+import { usePosts } from "../../hooks/usePosts"
 import { Header } from "../uis/Header"
 
 export const PostPage = ({ }) => {
@@ -28,7 +28,7 @@ export const PostPage = ({ }) => {
         })
         setIsLoading(false)
         const data=await res.json()
-        console.log(data);
+        console.log(datat );
         
         if (res.ok) {
             alert("投稿が作成されました")

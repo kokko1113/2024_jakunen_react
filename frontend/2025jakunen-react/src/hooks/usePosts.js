@@ -37,14 +37,14 @@ export const usePosts = () => {
         setSelectCategory(category)
     }
 
-    const searchPost = async (keyword) => {
+    const searchPost = (keyword) => {
         setSearch(keyword)
     }
 
-    const sortGenrePost = (e) => {
-        console.log(e.target.value);
+    const sortGenrePost = (jenre) => {
+        // console.log(e.target.value);
         
-        // setSort(jenre)
+        setSort(jenre)
     }
 
     function filterPost() {

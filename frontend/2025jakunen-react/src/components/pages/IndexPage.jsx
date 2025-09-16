@@ -1,4 +1,4 @@
-import { usePosts } from "../../hooks/UsePosts"
+import { usePosts } from "../../hooks/usePosts"
 import { Header } from "../uis/Header"
 import { PostCard } from "../uis/PostCard"
 

@@ -13,15 +13,11 @@ export const Header = ({ category, searchPost, filterByCategoryPost, sortGenrePo
         searchPost(searchRef.current.value)
     }
 
-    const onsortGenrePost = (e) => {
-        console.log(sortRef.current);
+    const onsortGenrePost = () => {
+        // console.log(sortRef.current);
         
-        sortGenrePost(e.target.value)
+        sortGenrePost(sortRef.current.value)
     }
-
-    // useEffect(()=>{
-    //     sortGenrePost("adsdae")
-    // },[])
 
     return (
         <>
@@ -40,7 +36,7 @@ export const Header = ({ category, searchPost, filterByCategoryPost, sortGenrePo
                     }
                 </select>
 
-                <select className="ms-5" onChange={sortGenrePost} ref={sortRef}>
+                <select className="ms-5" onChange={onsortGenrePost} ref={sortRef}>
                     <option value="all">新着順</option>
                     <option value="likes">いいね順</option>
                 </select>
